@@ -16,5 +16,5 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
 
 
 Route::get('all', [ProductController::class, 'allProdutos'])->middleware('auth.role:1,2');
-Route::get('allProdutos', ProductController::class, 'allProdutos')->middleware('auth.role:1,2');
-Route::get('allProdutos', ExampleController::class, 'allProdutos')->middleware('auth.role:1,2');
+Route::get('allProdutos', [ProductController::class, 'allProdutos'])->middleware('auth.role:1,2');
+Route::get('allProdutos', [ExampleController::class, 'allProdutos'])->middleware('auth.role:1,2');
